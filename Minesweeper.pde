@@ -94,7 +94,23 @@ public class MSButton
     public void mousePressed () 
     {
         clicked = true;
-        //your code here
+        if (keyPressed==true)
+        {
+            marked=true;
+        }
+        else if (bombs.contains(this)==true)
+        {
+            print("you lose");
+        }
+        else if (countBombs>0)
+        {
+
+        }
+        else
+        {
+            mouseClicked();
+        }
+        
     }
 
     public void draw () 
