@@ -108,6 +108,18 @@ public class MSButton
         }
         else
         {
+            if (isValid(r, c-1) && blobs[r][c-1].isMarked())
+
+        blobs[r][c-1].mousePressed();
+        
+       if (isValid(r,c+1)&& blobs[r][c+1].isMarked())
+       blobs[r][c+1].mousePressed();
+       
+        if (isValid(r-1,c)&& blobs[r-1][c].isMarked())
+      blobs[r-1][c].mousePressed();
+      
+       if (isValid(r+1,c)&& blobs[r+1][c].isMarked())
+       blobs[r+1][c].mousePressed();
             //is valid statements
         }
         
