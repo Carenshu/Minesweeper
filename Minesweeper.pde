@@ -24,7 +24,7 @@ void setup ()
             buttons[r][c]= new MSButton(r,c);
         }
     }  
-
+    bombs= new ArrayList <MSButton>();
     //declare and initialize buttons
     setBombs();
 }
@@ -35,7 +35,7 @@ public void setBombs()
     System.out.println("randomR: "+randomR);
     System.out.println("randomC: "+randomC);
    
-    if (! bombs.contains(buttons[randomR][randomC]))
+    if (!bombs.contains(buttons[randomR][randomC]))
     {
          bombs.add(buttons[randomR][randomC]);
     }
@@ -96,19 +96,19 @@ public class MSButton
         clicked = true;
         if (keyPressed==true)
         {
-            marked=true;
+            marked= !marked;
         }
-        else if (bombs.contains(this)==true)
+        else if (bombs.contains(this))
         {
-            print("you lose");
+            displayLosingMessage();
         }
-        else if (countBombs>0)
+        else if (countBombs(row, col)>0)
         {
 
         }
         else
         {
-            mouseClicked();
+            //is valid statements
         }
         
     }
