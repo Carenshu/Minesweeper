@@ -50,7 +50,13 @@ public void draw ()
 }
 public boolean isWon()
 {
-    //your code here
+    for (int i=0; i< bomb.size(); i++)
+    {
+        if (bombs.get(i).isMarked()==true)
+        {
+           return true;
+         }
+    }
     return false;
 }
 public void displayLosingMessage()
@@ -102,9 +108,9 @@ public class MSButton
         {
             displayLosingMessage();
         }
-        else if (countBombs(row, col)>0)
+        else if (countBombs(r, c)>0)
         {
-
+             
         }
         else
         {
