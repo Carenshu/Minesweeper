@@ -50,7 +50,7 @@ public void draw ()
 }
 public boolean isWon()
 {
-    for (int i=0; i< bomb.size(); i++)
+    for (int i=0; i< bombs.size(); i++)
     {
         if (bombs.get(i).isMarked()==true)
         {
@@ -114,17 +114,17 @@ public class MSButton
         }
         else
         {
-            if (isValid(r, c-1) && blobs[r][c-1].isMarked())
+            if (isValid(r, c-1) && buttons[r][c-1].isMarked())
 
-        blobs[r][c-1].mousePressed();
+        buttons[r][c-1].mousePressed();
         
-       if (isValid(r,c+1)&& blobs[r][c+1].isMarked())
+       if (isValid(r,c+1)&& buttons[r][c+1].isMarked())
        blobs[r][c+1].mousePressed();
        
-        if (isValid(r-1,c)&& blobs[r-1][c].isMarked())
+        if (isValid(r-1,c)&& buttons[r-1][c].isMarked())
       blobs[r-1][c].mousePressed();
       
-       if (isValid(r+1,c)&& blobs[r+1][c].isMarked())
+       if (isValid(r+1,c)&& buttons[r+1][c].isMarked())
        blobs[r+1][c].mousePressed();
             //is valid statements
         }
