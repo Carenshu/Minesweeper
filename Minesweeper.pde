@@ -62,10 +62,12 @@ public boolean isWon()
 public void displayLosingMessage()
 {
     //your code here
+    text("Loser", 100,100);
 }
 public void displayWinningMessage()
 {
     //your code here
+    text("You won!",100,100);
 }
 
 public class MSButton
@@ -110,7 +112,7 @@ public class MSButton
         }
         else if (countBombs(r, c)>0)
         {
-             
+             setLabel(""+countBombs(r,c));
         }
         else
         {
@@ -119,14 +121,14 @@ public class MSButton
         buttons[r][c-1].mousePressed();
         
        if (isValid(r,c+1)&& buttons[r][c+1].isMarked())
-       blobs[r][c+1].mousePressed();
+       buttons[r][c+1].mousePressed();
        
         if (isValid(r-1,c)&& buttons[r-1][c].isMarked())
-      blobs[r-1][c].mousePressed();
+      buttons[r-1][c].mousePressed();
       
        if (isValid(r+1,c)&& buttons[r+1][c].isMarked())
-       blobs[r+1][c].mousePressed();
-            //is valid statements
+       buttons[r+1][c].mousePressed();
+          
         }
         
     }
