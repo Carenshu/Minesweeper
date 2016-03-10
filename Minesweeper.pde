@@ -26,7 +26,10 @@ void setup ()
     }  
     bombs= new ArrayList <MSButton>();
     //declare and initialize buttons
+    for (int b=0; b<15; b++)
+    {
     setBombs();
+    }
 }
 public void setBombs()
 {
