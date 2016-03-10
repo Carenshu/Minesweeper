@@ -170,8 +170,20 @@ public class MSButton
     public int countBombs(int row, int col)
     {
         int numBombs = 0;
-        //your code here
-        return numBombs;
+        if (isValid(r, c-1) && buttons[r][c-1].isMarked())
+
+        numbombs++;
+        
+       if (isValid(r,c+1)&& buttons[r][c+1].isMarked())
+           numbombs++;
+           
+        if (isValid(r-1,c)&& buttons[r-1][c].isMarked())
+           numbombs++;
+      
+       if (isValid(r+1,c)&& buttons[r+1][c].isMarked())
+           numbombs++;
+       
+    return numBombs;
     }
 }
 
