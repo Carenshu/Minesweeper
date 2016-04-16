@@ -202,8 +202,17 @@ public class MSButton
        if (isValid(r+1,c)&& buttons[r+1][c].isMarked())
            numBombs++;
            
-        
+       if (isValid(r+1,c+1)&& buttons[r+1][c+1].isMarked())
+           numBombs++;
+    
+       if (isValid(r-1,c+1)&& buttons[r-1][c+1].isMarked())
+           numBombs++;
+           
+       if (isValid(r-1,c-1)&& buttons[r-1][c-1].isMarked())
+           numBombs++;       
        
+       if (isValid(r-1,c+1)&& buttons[r-1][c+1].isMarked())
+           numBombs++;
     return numBombs;
     }
 }
