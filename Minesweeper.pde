@@ -1,8 +1,8 @@
 
 
 import de.bezier.guido.*;
-int NUM_ROWS=20;
-int NUM_COLS=20;
+public static final int NUM_ROWS=20;
+public static final int NUM_COLS=20;
 //Declare and initialize NUM_ROWS and NUM_COLS = 20
 private MSButton[][] buttons; //2d array of minesweeper buttons
 private ArrayList <MSButton> bombs; //ArrayList of just the minesweeper buttons that are mined
@@ -47,7 +47,7 @@ public void setBombs()
 
 public void draw ()
 {
-    background( 0 );
+    background( 255);
     if(isWon())
         displayWinningMessage();
 }
@@ -66,6 +66,9 @@ public void displayLosingMessage()
 {
     //your code here
     text("Loser", 100,100);
+    for (int i=0; i<bombs.size();i++)
+        bombs.get(i).marked= false;
+        bombs.get(i).clicked=true;
 }
 public void displayWinningMessage()
 {
@@ -121,16 +124,32 @@ public class MSButton
         {
             if (isValid(r, c-1) && buttons[r][c-1].isClicked()==false)
 
-        buttons[r][c-1].mousePressed();
+               buttons[r][c-1].mousePressed();
         
-       if (isValid(r,c+1)&& buttons[r][c+1].isClicked()==false)
-       buttons[r][c+1].mousePressed();
+           if (isValid(r,c+1)&& buttons[r][c+1].isClicked()==false)
+                 buttons[r][c+1].mousePressed();
        
-        if (isValid(r-1,c)&& buttons[r-1][c].isClicked()==false)
-      buttons[r-1][c].mousePressed();
+           if (isValid(r-1,c)&& buttons[r-1][c].isClicked()==false)
+                 buttons[r-1][c].mousePressed();
       
-       if (isValid(r+1,c)&& buttons[r+1][c].isClicked()==false)
-       buttons[r+1][c].mousePressed();
+           if (isValid(r+1,c)&& buttons[r+1][c].isClicked()==false)
+                buttons[r+1][c].mousePressed();
+            
+           if (isValid(r+1,c+1)&& buttons[r+1][c+1].isClicked()==false)
+                buttons[r+1][c+1].mousePressed();
+
+           
+           if (isValid(r-1,c+1)&& buttons[r-1][c+1].isClicked()==false)
+                buttons[r-1][c+1].mousePressed();
+
+           
+           if (isValid(r+1,c-1)&& buttons[r+1][c-1].isClicked()==false)
+                buttons[r+1][c-1].mousePressed();
+
+           
+           if (isValid(r-1,c-1)&& buttons[r-1][c-1].isClicked()==false)
+              buttons[r-1][c-1].mousePressed();
+
           
         }
         
@@ -182,6 +201,8 @@ public class MSButton
       
        if (isValid(r+1,c)&& buttons[r+1][c].isMarked())
            numBombs++;
+           
+        
        
     return numBombs;
     }
