@@ -65,8 +65,10 @@ public void displayLosingMessage()
     //your code here
     text("Loser", 100,100);
     for (int i=0; i<bombs.size();i++)
+    {
         bombs.get(i).marked= false;
         bombs.get(i).clicked=true;
+        }
 }
 public void displayWinningMessage()
 {
