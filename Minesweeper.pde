@@ -124,31 +124,31 @@ public class MSButton
         {
             if (isValid(r, c-1) && buttons[r][c-1].isClicked()==false)
 
-               buttons[r][c-1].mousePressed();
+              { buttons[r][c-1].mousePressed();}
         
            if (isValid(r,c+1)&& buttons[r][c+1].isClicked()==false)
-                 buttons[r][c+1].mousePressed();
+               {  buttons[r][c+1].mousePressed();}
        
            if (isValid(r-1,c)&& buttons[r-1][c].isClicked()==false)
-                 buttons[r-1][c].mousePressed();
+                { buttons[r-1][c].mousePressed();}
       
            if (isValid(r+1,c)&& buttons[r+1][c].isClicked()==false)
-                buttons[r+1][c].mousePressed();
+               { buttons[r+1][c].mousePressed();}
             
            if (isValid(r+1,c+1)&& buttons[r+1][c+1].isClicked()==false)
-                buttons[r+1][c+1].mousePressed();
+                {buttons[r+1][c+1].mousePressed();}
 
            
            if (isValid(r-1,c+1)&& buttons[r-1][c+1].isClicked()==false)
-                buttons[r-1][c+1].mousePressed();
+                {buttons[r-1][c+1].mousePressed();}
 
            
            if (isValid(r+1,c-1)&& buttons[r+1][c-1].isClicked()==false)
-                buttons[r+1][c-1].mousePressed();
+                {buttons[r+1][c-1].mousePressed();}
 
            
            if (isValid(r-1,c-1)&& buttons[r-1][c-1].isClicked()==false)
-              buttons[r-1][c-1].mousePressed();
+              {buttons[r-1][c-1].mousePressed();}
 
           
         }
@@ -191,28 +191,29 @@ public class MSButton
         int numBombs = 0;
         if (isValid(r, c-1) && buttons[r][c-1].isMarked())
 
-        numBombs++;
+             {numBombs++;}
         
        if (isValid(r,c+1)&& buttons[r][c+1].isMarked())
-           numBombs++;
+           {numBombs++;}
            
         if (isValid(r-1,c)&& buttons[r-1][c].isMarked())
-           numBombs++;
+           {numBombs++;}
       
        if (isValid(r+1,c)&& buttons[r+1][c].isMarked())
-           numBombs++;
+           {numBombs++;}
            
        if (isValid(r+1,c+1)&& buttons[r+1][c+1].isMarked())
-           numBombs++;
+           {numBombs++;}
     
        if (isValid(r-1,c+1)&& buttons[r-1][c+1].isMarked())
-           numBombs++;
+           {numBombs++;}
            
        if (isValid(r-1,c-1)&& buttons[r-1][c-1].isMarked())
-           numBombs++;       
+           {numBombs++; }      
        
        if (isValid(r-1,c+1)&& buttons[r-1][c+1].isMarked())
-           numBombs++;
+           {numBombs++;}
+           
     return numBombs;
     }
 }
